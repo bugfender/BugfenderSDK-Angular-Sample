@@ -1,0 +1,28 @@
+{
+  "generator-ngx-rocket": {
+    "version": "8.0.1",
+    "props": {
+      "location": "path",
+      "strict": false,
+      "skipInstall": false,
+      "skipQuickstart": false,
+      "initGit": true,
+      "usePrefix": true,
+      "appName": "Bugfender Demo App",
+      "target": ["web"],
+      "pwa": false,
+      "ui": "bootstrap",
+      "auth": false,
+      "lazy": true,
+      "angulartics": false,
+      "languages": ["en-US"],
+      "tools": ["prettier"],
+      "utility": [],
+      "deploy": "none",
+      "projectName": "bugfender-demo-app",
+      "packageManager": "npm",
+      "mobile": [],
+      "desktop": []
+    }
+  }
+}
