@@ -38,19 +38,22 @@ npm i @bugfender/sdk
 import { BugfenderSDK } from '@bugfender/sdk';
 ```
 
-```javascript
+```typescript
 providers: [
     {
         provide: BugfenderSDK,
         deps: [],
         useFactory: () => {
             const bugfender = new BugfenderSDK('<YOUR_APP_KEY_HERE>');
-            bugfender.init();
+            bugfender.setVersion(environment.version); //App Version
+            bugfender.setBuild('123'); //App Build Number
+            bugfender.init().then(() => {
+              bugfender.overrideConsoleMethods(); //Send all console messages to Bugfender
+            });
             return bugfender;
         },
     },
 ],
-
 ```
 
 Remember to change `<YOUR_APP_KEY_HERE>` with the app key of your app and also your version & build numbers.
