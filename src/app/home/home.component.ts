@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 
 import { QuoteService } from './quote.service';
-import { BugfenderSDK } from '@bugfender/sdk';
+import { Bugfender } from '@bugfender/sdk';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +13,8 @@ export class HomeComponent implements OnInit {
   quote: string | undefined;
   isLoading = false;
 
-  constructor(private quoteService: QuoteService, protected readonly bugfender: BugfenderSDK) {
-    bugfender.log('HomeComponent constructor');
+  constructor(private quoteService: QuoteService) {
+    Bugfender.log('HomeComponent constructor');
     console.log('This is a regular log');
   }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { environment } from '@env/environment';
-import { BugfenderSDK } from '@bugfender/sdk';
+import { Bugfender } from '@bugfender/sdk';
 
 @Component({
   selector: 'app-about',
@@ -11,8 +11,8 @@ import { BugfenderSDK } from '@bugfender/sdk';
 export class AboutComponent implements OnInit {
   version: string | null = environment.version;
 
-  constructor(protected readonly bugfender: BugfenderSDK) {
-    bugfender.log('AboutComponent constructor');
+  constructor() {
+    Bugfender.log('AboutComponent constructor');
   }
 
   ngOnInit() {}
