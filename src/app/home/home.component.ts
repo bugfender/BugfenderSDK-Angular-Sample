@@ -31,4 +31,8 @@ export class HomeComponent implements OnInit {
         this.quote = quote;
       });
   }
+
+  generateCrash() {
+    (this as any).methodDoesNotExist();
+  }
 }
