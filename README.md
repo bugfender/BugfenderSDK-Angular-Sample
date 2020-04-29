@@ -57,6 +57,13 @@ export class HomeComponent {
 }
 ```
 
+### Handling crashes
+
+Angular registers a global error handler that overrides Bugfenders default global error handler. So, to catch unhandled errors and report them to Bugfender you'll need a custom Angular `ErrorHandler`. This repository contains an example on how to implement this:
+
+- [See custom `ErrorHandler`](https://github.com/bugfender/BugfenderSDK-Angular-Sample/blob/master/src/app/app.error-handler.ts).
+- [See Angular documentation](https://angular.io/api/core/ErrorHandler).
+
 ## More information
 
 ### Docs
