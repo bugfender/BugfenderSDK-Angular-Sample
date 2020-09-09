@@ -30,14 +30,16 @@ Here are the main points to getting Bugfender working on your apps:
 
 ```typescript
 Bugfender.init({
-    appKey: '<YOUR_APP_KEY_HERE>',
-    // apiURL: 'https://api.bugfender.com',
-    // baseURL: 'https://dashboard.bugfender.com',
-    // overrideConsoleMethods: true,
-    // printToConsole: true,
-    // registerErrorHandler: true,
-    // version: '',
-    // build: '',
+  appKey: '<YOUR_APP_KEY_HERE>',
+  // apiURL: 'https://api.bugfender.com',
+  // baseURL: 'https://dashboard.bugfender.com',
+  // overrideConsoleMethods: true,
+  // printToConsole: true,
+  // registerErrorHandler: true,
+  // logBrowserEvents: true,
+  // logUIEvents: true,
+  // version: '',
+  // build: '',
 });
 ```
 
