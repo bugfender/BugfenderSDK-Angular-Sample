@@ -35,4 +35,14 @@ export class HomeComponent implements OnInit {
   generateCrash() {
     (this as any).methodDoesNotExist();
   }
+
+  async openFeedbackModal() {
+    const result = await Bugfender.getUserFeedback();
+
+    if (result.isSent) {
+      console.log('Feedback sent! URL: ', result.feedbackURL);
+    } else {
+      console.log(`The user didn't provide feedback… :(`);
+    }
+  }
 }
