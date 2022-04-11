@@ -24,6 +24,7 @@ Bugfender.init({
   // registerErrorHandler: true,
   version: environment.version,
   build: '123',
+  deviceName: 'Bugfender Angular Example',
 });
 
 @NgModule({
@@ -40,9 +41,7 @@ Bugfender.init({
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],
-  providers: [
-    { provide: ErrorHandler, useClass: AppErrorHandler },
-  ],
+  providers: [{ provide: ErrorHandler, useClass: AppErrorHandler }],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
