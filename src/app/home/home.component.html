@@ -7,6 +7,11 @@
     <app-loader [isLoading]="isLoading"></app-loader>
     <q [hidden]="isLoading">{{ quote }}</q>
   </div>
+  <div>
+    <input placeholder="Email" />
+    <input placeholder="Password" type="password" />
+    <input placeholder="Sensitive" data-bf-skip-keylog />
+  </div>
   <button class="btn" (click)="generateCrash()">Generate Crash</button>
   <button class="btn" (click)="openFeedbackModal()">Open Feedback Modal</button>
 </div>
