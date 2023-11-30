@@ -8,9 +8,9 @@ export class AppErrorHandler extends ErrorHandler {
   }
 
   handleError(error: Error) {
-    Bugfender.sendCrash(error.message, [
-        `Error: ${error.message}`,
-        `Stack: ${error.stack}`,
-    ].join('\n'));
+    Bugfender.sendCrash(
+      error.message,
+      [`Error: ${error.message}`, `Stack: ${error.stack}`].join('\n')
+    );
   }
 }
