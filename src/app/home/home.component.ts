@@ -36,6 +36,11 @@ export class HomeComponent implements OnInit {
     (this as any).methodDoesNotExist();
   }
 
+  async triggerUncaughtPromise() {
+    let promise = new Promise((_, reject) => reject());
+    await promise;
+  }
+
   async openFeedbackModal() {
     const result = await Bugfender.getUserFeedback();
 
