@@ -17,7 +17,7 @@ const untilDestroyedSymbol = Symbol('untilDestroyed');
  * import { untilDestroyed } from '@core';
  *
  * @Component({
- * selector: 'app-example',
+ *   selector: 'app-example',
  *   templateUrl: './example.component.html'
  * })
  * export class ExampleComponent implements OnInit, OnDestroy {
