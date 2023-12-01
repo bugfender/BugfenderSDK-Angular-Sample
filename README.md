@@ -12,7 +12,7 @@ If you plan to use Bugfender SDK on an **vanilla Javascript app**, visit https:/
 
 To check the app in your local machine, first you need to edit the code on `src/app/app.module.ts` and change the `<YOUR_APP_KEY_HERE>` for you Bugfender App Key. Then you can run the app using:
 
-- Ensure Node.js 12 is installed on your system.
+- Ensure Node.js 18 is installed on your system.
 - `npm ci`
 - `npm start`
 
@@ -74,4 +74,4 @@ For more information on all methods available, please go to the [Bugfender JS SD
 
 ### SDK status
 
-The SDK is suitable for production. Please feel free to open an issue or contact us at [bugfender.com](https://bugfender.com) .
+The SDK is suitable for production. Please feel free to open an issue or contact us at [bugfender.com](https://bugfender.com).
