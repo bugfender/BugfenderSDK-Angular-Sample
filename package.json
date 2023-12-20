@@ -42,7 +42,7 @@
     "@angular/compiler-cli": "^13.4.0",
     "@angular/language-service": "^13.4.0",
     "@angularclass/hmr": "^3.0.0",
-    "@biesbjerg/ngx-translate-extract": "^4.2.0",
+    "@biesbjerg/ngx-translate-extract": "^7.0.4",
     "@ngx-rocket/scripts": "^4.0.0",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "^2.0.3",
