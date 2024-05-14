@@ -1,6 +1,6 @@
 # Bugfender
 
-Bugfender is a game-changing platform that logs every detail your users experience and feeds the data straight to an easy-to-use web console. Bugfender SDK is multi-platform and available for mobile and web apps, so you can use the same tool for all your apps.
+[Bugfender](https://bugfender.com) is a game-changing platform that logs every detail your users experience and feeds the data straight to an easy-to-use web console. Bugfender SDK is multi-platform and available for mobile and web apps, so you can use the same tool for all your apps.
 
 ## Bugfender SDK Angular Sample
 
@@ -8,21 +8,14 @@ This repository contains a sample Angular application with Bugfender SDK to coll
 
 If you plan to use Bugfender SDK on an **vanilla Javascript app**, visit https://github.com/bugfender/BugfenderSDK-JS-Sample
 
-### Running the app
+## Links
 
-To check the app in your local machine, first you need to edit the code on `src/app/app.module.ts` and change the `<YOUR_APP_KEY_HERE>` for you Bugfender App Key. Then you can run the app using:
+- [Official Angular SDK Docs](https://docs.bugfender.com/docs/platforms/web-apps/bugfender-for-angular)
+- [Bugfender JS SDK reference documentation](https://js.bugfender.com/)
 
-- Ensure Node.js 18 is installed on your system.
-- `npm ci`
-- `npm start`
+## Quick Start Guide
 
-_You can get an app key at [bugfender.com](https://bugfender.com/)_
-
-## Bugfender SDK Angular Documentation
-
-### SDK Installation
-
-Here are the main points to getting Bugfender working on your apps:
+To get Bugfender working on your apps, you will need to:
 
 - Get an app key at [bugfender.com](https://bugfender.com/)
 - `npm i @bugfender/sdk`. Install SDK npm package.
@@ -44,33 +37,6 @@ Bugfender.init({
 ```
 
 Remember to change `<YOUR_APP_KEY_HERE>` with the app key of your app.
-
-### Using Bugfender
-
-After you have initialized the SDK, you can start using it anywhere by just importing the `Bugfender` object:
-
-```typescript
-import { Bugfender } from '@bugfender/sdk';
-
-export class HomeComponent {
-  constructor() {
-    Bugfender.log('HomeComponent constructor');
-  }
-}
-```
-
-### Handling crashes
-
-Angular registers a global error handler that overrides Bugfenders default global error handler. So, to catch unhandled errors and report them to Bugfender you'll need a custom Angular `ErrorHandler`. This repository contains an example on how to implement this:
-
-- [See custom `ErrorHandler`](https://github.com/bugfender/BugfenderSDK-Angular-Sample/blob/master/src/app/app.error-handler.ts).
-- [See Angular documentation](https://angular.io/api/core/ErrorHandler).
-
-## More information
-
-### Docs
-
-For more information on all methods available, please go to the [Bugfender JS SDK reference documentation](https://js.bugfender.com/).
 
 ### SDK status
 
