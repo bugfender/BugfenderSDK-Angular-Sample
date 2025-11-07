@@ -73,13 +73,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "bugfender-demo-app:build",
-            "hmr": true
+            "hmr": true,
+            "buildTarget": "bugfender-demo-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "bugfender-demo-app:build:production",
-              "hmr": false
+              "hmr": false,
+              "buildTarget": "bugfender-demo-app:build:production"
             },
             "ci": {}
           }
@@ -87,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bugfender-demo-app:build"
+            "buildTarget": "bugfender-demo-app:build"
           }
         },
         "test": {
