@@ -6,7 +6,7 @@
     "esModuleInterop": true,
     "declaration": false,
     "module": "es2020",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "importHelpers": true,
     "noImplicitAny": true,
