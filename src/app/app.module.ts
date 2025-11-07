@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Bugfender } from '@bugfender/sdk';
@@ -28,20 +31,22 @@ Bugfender.init({
 });
 
 @NgModule({
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
     TranslateModule.forRoot(),
     NgbModule,
     CoreModule,
     SharedModule,
     ShellModule,
     HomeModule,
-    AppRoutingModule, // must be imported as the last module as it contains the fallback route
+    AppRoutingModule,
   ],
-  declarations: [AppComponent],
-  providers: [{ provide: ErrorHandler, useClass: AppErrorHandler }],
-  bootstrap: [AppComponent],
+  providers: [
+    { provide: ErrorHandler, useClass: AppErrorHandler },
+    provideHttpClient(withInterceptorsFromDi()),
+  ],
 })
 export class AppModule {}
