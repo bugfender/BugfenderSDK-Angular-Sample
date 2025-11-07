@@ -3,6 +3,14 @@ import { takeUntil } from 'rxjs/operators';
 
 const untilDestroyedSymbol = Symbol('untilDestroyed');
 
+type DestroyCallback = (...args: unknown[]) => void;
+
+interface IndexedInstance {
+  [key: string]: unknown;
+  [key: symbol]: unknown;
+  [untilDestroyedSymbol]?: Subject<void>;
+}
+
 /**
  * RxJS operator that unsubscribe from observables on destory.
  * Code forked from https://github.com/NetanelBasal/ngx-take-until-destroy
@@ -39,7 +47,10 @@ export function untilDestroyed(
   destroyMethodName: string = 'ngOnDestroy'
 ) {
   return <T>(source: Observable<T>) => {
-    const originalDestroy = instance[destroyMethodName];
+    const target = instance as IndexedInstance;
+    const originalDestroy = target[destroyMethodName] as
+      | DestroyCallback
+      | undefined;
     const hasDestroyFunction = typeof originalDestroy === 'function';
 
     if (!hasDestroyFunction) {
@@ -48,18 +59,18 @@ export function untilDestroyed(
       );
     }
 
-    if (!instance[untilDestroyedSymbol]) {
-      instance[untilDestroyedSymbol] = new Subject();
+    if (!target[untilDestroyedSymbol]) {
+      target[untilDestroyedSymbol] = new Subject<void>();
 
-      instance[destroyMethodName] = function () {
+      target[destroyMethodName] = function (...args: unknown[]) {
         if (hasDestroyFunction) {
-          originalDestroy.apply(this, arguments);
+          originalDestroy.apply(this, args);
         }
-        instance[untilDestroyedSymbol].next();
-        instance[untilDestroyedSymbol].complete();
-      };
+        target[untilDestroyedSymbol]?.next();
+        target[untilDestroyedSymbol]?.complete();
+      } as DestroyCallback;
     }
 
-    return source.pipe(takeUntil<T>(instance[untilDestroyedSymbol]));
+    return source.pipe(takeUntil<T>(target[untilDestroyedSymbol]!));
   };
 }

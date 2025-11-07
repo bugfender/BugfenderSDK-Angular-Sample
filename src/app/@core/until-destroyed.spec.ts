@@ -17,7 +17,9 @@ describe('untilDestroyed', () => {
     const spy = createObserver();
     const spy2 = createObserver();
 
-    @Component({})
+    @Component({
+      standalone: false,
+    })
     class Test implements OnDestroy {
       obs!: Subscription;
 
@@ -48,7 +50,9 @@ describe('untilDestroyed', () => {
     const spy2 = createObserver();
     const spy3 = createObserver();
 
-    @Component({})
+    @Component({
+      standalone: false,
+    })
     class Test implements OnDestroy {
       obs = new Subject().pipe(untilDestroyed(this)).subscribe(spy);
       obs2 = new Subject().pipe(untilDestroyed(this)).subscribe(spy2);
@@ -132,7 +136,9 @@ describe('untilDestroyed', () => {
     // Arrange
     const spy = createObserver();
 
-    @Component({})
+    @Component({
+      standalone: false,
+    })
     class A implements OnDestroy {
       ngOnDestroy() {}
     }
@@ -149,7 +155,9 @@ describe('untilDestroyed', () => {
     // Arrange
     const spy = createObserver();
 
-    @Component({})
+    @Component({
+      standalone: false,
+    })
     class Parent implements OnDestroy {
       ngOnDestroy() {}
     }

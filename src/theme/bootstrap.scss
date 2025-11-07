@@ -1,0 +1,25 @@
+@use "./theme-variables" as theme;
+
+@use "bootstrap/scss/bootstrap" with (
+  $white: theme.$app-white,
+  $gray-100: theme.$app-gray-100,
+  $gray-200: theme.$app-gray-200,
+  $gray-300: theme.$app-gray-300,
+  $gray-400: theme.$app-gray-400,
+  $gray-500: theme.$app-gray-500,
+  $gray-600: theme.$app-gray-600,
+  $gray-700: theme.$app-gray-700,
+  $gray-800: theme.$app-gray-800,
+  $gray-900: theme.$app-gray-900,
+  $black: theme.$app-black,
+  $blue: theme.$app-blue,
+  $indigo: theme.$app-indigo,
+  $purple: theme.$app-purple,
+  $pink: theme.$app-pink,
+  $red: theme.$app-red,
+  $orange: theme.$app-orange,
+  $yellow: theme.$app-yellow,
+  $green: theme.$app-green,
+  $teal: theme.$app-teal,
+  $cyan: theme.$app-cyan
+);

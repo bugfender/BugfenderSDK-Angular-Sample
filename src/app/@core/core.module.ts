@@ -1,6 +1,10 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -9,7 +13,7 @@ import { ApiPrefixInterceptor } from './http/api-prefix.interceptor';
 import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule, TranslateModule, RouterModule],
+  imports: [CommonModule, TranslateModule, RouterModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
@@ -25,6 +29,7 @@ import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
       provide: RouteReuseStrategy,
       useClass: RouteReusableStrategy,
     },
+    provideHttpClient(withInterceptorsFromDi()),
   ],
 })
 export class CoreModule {
