@@ -19,7 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppErrorHandler } from './app.error-handler';
 
 Bugfender.init({
-  appKey: 'uDESNbaNrXsxWHA5M0YCzHViXUuRgUsC',
+  appKey: '<YOUR_APP_KEY_HERE>',
   // apiURL: 'https://api.bugfender.com',
   // baseURL: 'https://dashboard.bugfender.com',
   overrideConsoleMethods: true,
