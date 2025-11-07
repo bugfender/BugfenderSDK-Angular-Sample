@@ -19,14 +19,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppErrorHandler } from './app.error-handler';
 
 Bugfender.init({
-  appKey: '<YOUR_APP_KEY_HERE>',
+  appKey: 'uDESNbaNrXsxWHA5M0YCzHViXUuRgUsC',
   // apiURL: 'https://api.bugfender.com',
   // baseURL: 'https://dashboard.bugfender.com',
-  // overrideConsoleMethods: true,
-  // printToConsole: true,
-  // registerErrorHandler: true,
+  overrideConsoleMethods: true,
+  printToConsole: true,
+  registerErrorHandler: true,
   version: environment.version,
-  build: '123',
+  build: '2025.11.07',
   deviceName: 'Bugfender Angular Example',
 });
 

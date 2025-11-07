@@ -11,13 +11,20 @@ import { AppModule } from '@app/app.module';
 import { environment } from '@env/environment';
 import { hmrBootstrap } from './hmr';
 
+declare const module: {
+  hot?: {
+    accept: () => void;
+    dispose: (callback: () => void) => void;
+  };
+};
+
 if (environment.production) {
   enableProdMode();
 }
 
 const bootstrap = () => platformBrowserDynamic().bootstrapModule(AppModule);
 
-if (environment.hmr) {
+if (environment.hmr && module?.hot) {
   hmrBootstrap(module, bootstrap);
 } else {
   bootstrap().catch((err) => console.error(err));
