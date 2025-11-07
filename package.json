@@ -29,7 +29,6 @@
     "@angular/router": "^13.4.0",
     "@bugfender/sdk": "^2.3.0",
     "@fortawesome/fontawesome-free": "^5.1.0",
-    "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "@ngx-translate/core": "^13.0.0",
     "bootstrap": "^4.1.1",
     "rxjs": "^6.5.4",
